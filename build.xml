@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="main" name="robombastic_cohen_candassamy">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <property name="build.dir" value="bin" />
+    <property name="src.dir" value="src" />
+    <property name="lib.dir" value="lib"/>
+    <property name="bots.dir" value="bots"/>
+    <property name="projectName" value="CANDASSAMYCOHEN" />
+    <property name="Main-Class" value="fr.dauphine.robombastic.impl.Game" />
+    <property name="dist.dir" location="." />
+	<property name="doc.dir" value="doc/robombastic"/>
+      	
+    <target name="init">
+            <mkdir dir="${build.dir}"/> 
+    </target>
+	
+	<!-- Clean the project -->
+    <target name="clean" description="clean project">
+            <delete dir="${build.dir}" />
+    </target>
+	
+	<!-- Compile the project -->
+  	<target name="compile">
+  		<copy todir="${build.dir}/robombastic_arena">
+  		  <fileset dir="src/arena">
+  		    <exclude name="**/*.java"/>
+  		  </fileset>
+  		</copy>
+  		<copy todir="${build.dir}/robombastic_bots">
+  			<fileset dir="bots">
+  			  		    <exclude name="**/*.java"/>
+  			</fileset>
+  			</copy>
+  		<copy todir="${build.dir}/sprites">
+  			<fileset dir="src/sprites">
+  			  		    <exclude name="**/*.java"/>
+  			  		  </fileset>
+  		</copy>
+  	    <javac srcdir="${src.dir}" destdir="${build.dir}">
+  	        <classpath>
+  	               <fileset dir="${lib.dir}">
+  	                  <include name="**/*.jar" />
+  	               </fileset>
+  	         </classpath>
+  	    	 <classpath>
+  	    		
+  	    	</classpath>
+  	    </javac>
+  	</target>
+	
+	<!-- Generate the jar file -->
+  	<target name="jar" depends="compile">
+  	    <mkdir dir="${dist.dir}"/>
+  	    <jar destfile="${dist.dir}/${projectName}.jar" basedir="${build.dir}">
+  	        <manifest>
+  	            <attribute name="Main-Class" value="${Main-Class}"/>
+  	        </manifest>
+  	        <zipgroupfileset dir="${lib.dir}" includes="**/*.jar"/>
+  	    </jar>
+
+  	</target>
+	
+	<!-- Generate javadocs for current project into ${doc.dir} -->
+	  <target name="doc" depends="init" description="generate documentation">
+	    <javadoc sourcepath="${src.dir}" destdir="${doc.dir}"/>
+	  </target>
+     
+    <target name="main" depends="clean, init, compile, jar, doc" />          	
+             	
+</project>
