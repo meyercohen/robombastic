@@ -19,8 +19,8 @@ How to compile the project ?
 How to launch the game ?
 
 - Open up a terminal
-- Go to the directory where you have stored the CANDASSAMYCOHEN.jar file
-- Type the following command line : java -jar CANDASSAMYCOHEN.jar
+- Go to the directory where you have stored the ROBOMBASTIC_Meyer_Swamy.jar file
+- Type the following command line : java -jar ROBOMBASTIC_Meyer_Swamy.jar
 
 Is there any parameters that we can use ?
 
@@ -48,13 +48,13 @@ Below, you'll find example of possible command line executions :
 
 If you want to customize all the parameters :
 
-java -jar CANDASSAMYCOHEN.jar -arena "arena/arena.txt" -radarSize 2 -armyLimit 4
+java -jar ROBOMBASTIC_Meyer_Swamy.jar -arena "arena/arena.txt" -radarSize 2 -armyLimit 4
 -turnDuration 1000 -bombDuration 3 -robotsDir "bots"
 
 If you want to load your last save :
 
-java -jar CANDASSAMYCOHEN.jar -loadSave
+java -jar ROBOMBASTIC_Meyer_Swamy.jar -loadSave
 
 You can also use some of the above parameters like :
 
-java -jar CANDASSAMYCOHEN.jar -arena "arena/arena2.txt" -turnDuration 500
+java -jar ROBOMBASTIC_Meyer_Swamy.jar -arena "arena/arena2.txt" -turnDuration 500
