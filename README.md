@@ -6,7 +6,7 @@ _____       _                     _               _   _
  |_|  \_\___/|_.__/ \___/|_| |_| |_|_.__/ \__,_|___/\__|_|\___|
 
 
-Authors: Swamynathan CANDASSAMY & Meyer COHEN
+Authors: Meyer COHEN
 
 How to compile the project ?
 
